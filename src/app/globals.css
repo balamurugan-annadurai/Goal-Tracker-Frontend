@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
+@layer components {
+  .sort-equal {
+    @apply bg-[url(/sort_equal.svg)] cursor-pointer bg-no-repeat pr-5 bg-[center_right];
+  }
+
+  .sort-ascending {
+    @apply bg-[url(/sort_ascending.svg)] cursor-pointer bg-no-repeat pr-5 bg-[center_right];
+  }
+
+  .sort-descending {
+    @apply bg-[url(/sort_descending.svg)] cursor-pointer bg-no-repeat pr-5 bg-[center_right];
+  }
+} */
+
+html,
+body,
+#__next {
+  @apply h-full;
+}
