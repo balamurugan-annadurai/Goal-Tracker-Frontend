@@ -10,7 +10,9 @@ import toast from "react-hot-toast";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [isLoading,setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [showConformMsg, setShowConformMsg] = useState(false)
+
   const {
     register,
     handleSubmit,
@@ -30,6 +32,7 @@ const SignUp = () => {
       setIsLoading(false);
       if (res.data.status) {
         toast.success("User registered successfully");
+        setShowConformMsg(true)
         reset();
       }
       else {
@@ -44,6 +47,19 @@ const SignUp = () => {
   };
   const router = useRouter();
   if(isLoading) return <div>Loading...</div>
+  if (showConformMsg) return (
+  
+    <>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: "100vh" }}>
+        <div className="p-6 bg-white rounded-lg shadow-md text-center max-w-md">
+            <h2 className="text-xl font-semibold text-gray-700 mb-4">Account Activation Link Sent</h2>
+            <p className="text-gray-500">
+            A Account activation  link has been sent to your email. Please check your inbox to activate your account.
+            </p>
+        </div>
+    </div>
+</>
+  )
   return (
     <div className="w-full h-[100%] flex justify-center items-center">
       <div className="w-[500px] flex justify-center items-center flex-col p-[30px]">

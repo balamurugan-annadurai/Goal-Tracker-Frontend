@@ -30,7 +30,7 @@ const SignIn = () => {
              
             Cookies.set("goalTrackerJwtToken", res.data.token, { expires: 1 })
             toast.success("Login successful");
-            router.push("/signin")
+            router.push("/dashboard")
           } else if (res?.data?.message === "User not found") {
               toast.error("User not registered");
           } else if (res?.data?.message === "User not activated") {
