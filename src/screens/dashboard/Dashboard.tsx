@@ -42,7 +42,9 @@ export default function ProfilePage() {
 
   // Show loading state if data is not available
 
-  const completionRate = (userData?.completedGoals / userData?.totalGoals) * 100 || 0;
+  const completionRate = userData?.totalGoals
+  ? ((userData.completedGoals || 0) / userData.totalGoals) * 100
+  : 0;
 
   const handleNotificationToggle = (checked: boolean) => {
     setUserData((prevData) => ({
